@@ -3,6 +3,9 @@
         <div v-if="isReady">
             <p v-for="film in allFilms" :key="film.id">{{ film.title }}</p>
         </div>
+        <div v-else>
+            <p>Favor aguardar os resultados.</p>
+        </div>
     </div>
 </template>
 
@@ -20,8 +23,9 @@ export default {
         ...mapGetters(['allFilms'])
     },
     created(){
-        this.isReady = true
-        this.fetchFilms()
+        this.fetchFilms().then(() => {
+            this.isReady = true
+        })
     },
     methods: {
         ...mapActions(['fetchFilms']),
