@@ -1,16 +1,18 @@
 <template>
     <div id="app">
-        <Films/>
+        <pokemons/>
     </div>
 </template>
 
 <script>
 import Films from './components/Films.vue'
+import Pokemons from './components/Pokemons.vue'
 
 export default {
     name: 'app',
     components: {
         Films,
+        Pokemons,
     }
 }
 </script>
