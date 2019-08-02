@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <pokemons/>
+        <router-view></router-view> 
     </div>
 </template>
 

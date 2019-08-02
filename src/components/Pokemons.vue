@@ -26,6 +26,7 @@ export default {
         this.fetchAllPokemon().then(() => {
             this.isReady = true
         })
+        console.log(this.$route)
     },
     methods: {
         ...mapActions(['fetchAllPokemon']),
