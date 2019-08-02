@@ -1,7 +1,11 @@
 <template>
     <div>
         <div v-if="isReady">
-            <p v-for="(pokemon, index) in allPokemon.results" :key="index">{{ pokemon.name }}, <a :href="pokemon.url">link</a></p>
+            <p v-for="(pokemon, index) in allPokemon.results" :key="index">
+                {{ pokemon.name }}, 
+                <a :href="pokemon.url">link</a>
+                <router-link :to="{ name: 'pokemon', params: { name: pokemon.name, url: pokemon.url }}">clique aqui</router-link>
+            </p>
         </div>
         <div v-else>
             <p>Favor aguardar os resultados.</p>
@@ -25,10 +29,7 @@ export default {
     created(){
         this.fetchAllPokemon().then(() => {
             this.isReady = true
-        })
-        console.log(this.$route)
-        this.fetchPokemon(1).then(() => {
-            console.log(this.currentPokemon)
+            console.log(this.allPokemon)
         })
     },
     methods: {
