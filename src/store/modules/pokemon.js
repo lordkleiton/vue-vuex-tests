@@ -16,8 +16,8 @@ const actions = {
         const res = await axios.get(state.baseurl + 'pokemon?limit=10000')
         commit('setAllPokemon', res.data)
     },
-    async fetchPokemon({ commit }, id){
-        const res = await axios.get(`${state.baseurl}pokemon/${id}`)
+    async fetchPokemon({ commit }, url){
+        const res = await axios.get(url)
         commit('setCurrentPokemon', res.data)
     }
 }
