@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import films from './modules/films'
-import pokemons from './modules/pokemons'
+import pokemon from './modules/pokemon'
 
 //declarando a store
 Vue.use(Vuex)
@@ -10,6 +10,6 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     modules: {
         films,
-        pokemons,
+        pokemon,
     }
 })

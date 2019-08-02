@@ -6,13 +6,13 @@
 
 <script>
 import Films from './components/Films.vue'
-import Pokemons from './components/Pokemons.vue'
+import AllPokemon from './components/AllPokemon.vue'
 
 export default {
     name: 'app',
     components: {
         Films,
-        Pokemons,
+        AllPokemon,
     }
 }
 </script>

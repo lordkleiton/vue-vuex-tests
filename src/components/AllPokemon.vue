@@ -13,23 +13,26 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
-    name: 'Films',
+    name: 'AllPokemon',
     data(){
         return {
             isReady: false
         }
     },
     computed: {
-        ...mapGetters(['allPokemon'])
+        ...mapGetters(['allPokemon', 'currentPokemon'])
     },
     created(){
         this.fetchAllPokemon().then(() => {
             this.isReady = true
         })
         console.log(this.$route)
+        this.fetchPokemon(1).then(() => {
+            console.log(this.currentPokemon)
+        })
     },
     methods: {
-        ...mapActions(['fetchAllPokemon']),
+        ...mapActions(['fetchAllPokemon', 'fetchPokemon']),
     },
 }
 </script>

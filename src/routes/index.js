@@ -5,7 +5,7 @@ import Films from '../components/Films'
 Vue.use(VueRouter)
 
 const routes = [
-    { path: '/', name: 'home', component: require('../components/Pokemons.vue').default },
+    { path: '/', name: 'home', component: require('../components/AllPokemon.vue').default },
     { path: '/teste', name: 'teste', component: Films },
     { path: '*', redirect: '/' },
 ]
